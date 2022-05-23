@@ -1,6 +1,8 @@
 
 import { request, gql } from 'graphql-request'
 
+const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
+
 export default async function getPosts() {
 
     const query = gql`
@@ -33,4 +35,7 @@ export default async function getPosts() {
         }
     `
 
+    const result = await request(graphqlAPI, query)
+
+    return result.postsConnection.edges
 }
