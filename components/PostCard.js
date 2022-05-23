@@ -1,6 +1,6 @@
 const PostCard = ({ post }) => {
     return (
-        <div>
+        <div key={post.title}>
             <h2>{post.title}</h2>
             <p>{post.excerpt}</p>
         </div>
