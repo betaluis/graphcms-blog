@@ -1,3 +1,5 @@
+import { React } from "react";
+
 const PostWidget = () => {
     return (
         <div>
@@ -7,3 +9,4 @@ const PostWidget = () => {
 }
 
 export default PostWidget;
+
