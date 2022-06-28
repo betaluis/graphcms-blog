@@ -198,4 +198,3 @@ Copy and paste the logic in the categories widget component and paste it in the 
 
 Time to create an article component in the next tutorial.
 
-
