@@ -89,11 +89,11 @@ The useEffect should only change when the slug changes.
 Now let's work on the jsx for the component.
 
 parent div with classes:
-    - bg-white
-    - shadow-lg
-    - rounded-lg
-    - p-8
-    - mb-8
+- bg-white
+- shadow-lg
+- rounded-lg
+- p-8
+- mb-8
 
 Inside of this div we're going to add an `h3` with the following inside:
         
