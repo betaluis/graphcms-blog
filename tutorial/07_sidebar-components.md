@@ -129,3 +129,73 @@ Next to the h3:
                 </div>
             </div>
         ))}
+
+# Categories Widget Component
+
+First, we'll have to create the query that's going to fetch our categories.
+
+```
+export const getCategories = async () => {
+    const query = gql`
+      query GetCategories {
+          categories {
+              name
+              slug
+            }
+        }
+    `
+
+    const result = await request(graphqlAPI, query)
+    return result.categories
+  }
+```
+
+Now we can go to our `categories` component and import our newly created function.
+
+```
+import { getCategories } from '../services'
+```
+
+Create a variable named "categories" and set the state to an empty array.
+
+`useEffect` will only be called at the start.
+
+Inside the `useEffect`:
+
+```
+getCategories().then(newCategories => setCategories(newCategories))
+```
+
+Time to work on the `jsx`:
+
+The parent `div` and the `h3` is going to be the same as in our `post` widget. You can copy those and paste them in this component.
+
+```
+<div className="bg-white shadowo-lg rounded-lg p-8 mb-8 pb-8">
+    <h3 className="text-xl mb-8 font-semibold border-b pb-4">Categories</h3>
+</div>
+```
+
+Now we have to map through the categories.
+
+Show a link for each category.
+
+The link is going to have a key equal to the slug. Remember the `href` as well.
+
+Inside of the link there will be a `span` with classes:
+- cursor-pointer
+- block
+- pb-3
+- mb-3
+
+Render the category name insdie the `span`.
+
+Create as many categories in your graphcms as you'd like.
+
+## Fixing the categories in our navigation
+
+Copy and paste the logic in the categories widget component and paste it in the header and make the necessary changes.
+
+Time to create an article component in the next tutorial.
+
+
